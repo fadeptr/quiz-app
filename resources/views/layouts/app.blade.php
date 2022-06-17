@@ -18,6 +18,9 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    {{-- Alert --}}
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    @livewireStyles
 </head>
 <body>
     <div id="app">
@@ -31,9 +34,11 @@
                 </button>
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <!-- Left Side Of Navbar -->
+                    <!-- Pahami -->
                     <ul class="navbar-nav me-auto">
-
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('admin.exams.home') }}">{{ __('Exams') }}</a>
+                        </li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->
@@ -79,5 +84,15 @@
             @yield('content')
         </main>
     </div>
+    @livewireScripts
+    @if (session()->has('success'))
+        <script>
+            Swal.fire(
+                'Notifikasi',
+                `{{ session('success') }}`,
+                'success'
+            )
+        </script>
+    @endif
 </body>
 </html>
