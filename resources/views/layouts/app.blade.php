@@ -84,6 +84,7 @@
             @yield('content')
         </main>
     </div>
+    @stack('scripts')
     @livewireScripts
     @if (session()->has('success'))
         <script>
