@@ -16,7 +16,11 @@
                             <li>Tahun Terbit: {{ $exam->year }}</li>
                             <li>Tipe: {{ $exam->type }}</li>
                         </ol>
-                        <button wire:click="start" class="btn btn-primary">Mulai Ujian</button>
+                        @if ($membership)
+                            <button wire:click="start" class="btn btn-primary">Mulai Ujian</button>
+                        @else
+                            <button class="btn btn-secondary" disabled>Kamu Belum Membership</button>
+                        @endif
                     </div>
                 </div>
             </div>

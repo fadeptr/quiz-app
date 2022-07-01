@@ -21,6 +21,7 @@
     {{-- Alert --}}
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     @livewireStyles
+    @stack('styles')
 </head>
 <body>
     <div id="app">
@@ -36,9 +37,23 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Pahami -->
                     <ul class="navbar-nav me-auto">
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('admin.exams.home') }}">{{ __('Exams') }}</a>
-                        </li>
+                        @auth
+                        @if (auth()->user()->email == 'admin@example.com')
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('admin.exams.home') }}">{{ __('Exams') }}</a>
+                            </li>
+                        @else
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('user.exams.home') }}">{{ __('Exams') }}</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('user.memberships.home') }}">{{ __('Membership') }}</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('user.invoices.home') }}">{{ __('Invoices') }}</a>
+                            </li>
+                        @endif
+                        @endauth
                     </ul>
 
                     <!-- Right Side Of Navbar -->
@@ -57,6 +72,11 @@
                                 </li>
                             @endif
                         @else
+                            <li class="nav-item">
+                                <div class="nav-link">
+                                    <x-membership/>
+                                </div>
+                            </li>
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }}
@@ -84,8 +104,6 @@
             @yield('content')
         </main>
     </div>
-    @stack('scripts')
-    @livewireScripts
     @if (session()->has('success'))
         <script>
             Swal.fire(
@@ -95,5 +113,7 @@
             )
         </script>
     @endif
+    @livewireScripts
+    @stack('scripts')
 </body>
 </html>

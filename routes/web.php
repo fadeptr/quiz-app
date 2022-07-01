@@ -1,5 +1,7 @@
 <?php
 
+use Carbon\Carbon;
+use App\Models\Membership;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -36,7 +38,11 @@ Route::middleware('auth')->group(function(){
     Route::get('/results/{id}', App\Http\Livewire\User\Exams\Result::class)->name('user.exams.result');
     // User Questions
     Route::get('/questions/{id}', App\Http\Livewire\User\Questions\Index::class)->name('user.questions.index');
-    // Nambah Sesuatu
+    // Membership
+    Route::get('/memberships', App\Http\Livewire\User\Membership\Home::class)->name('user.memberships.home');
+    // Invoices
+    Route::get('/invoices', App\Http\Livewire\User\Invoices\Home::class)->name('user.invoices.home');
+
 });
 // Users
 Route::get('/admin/users/home', App\Http\Livewire\Admin\Users\Home::class);
