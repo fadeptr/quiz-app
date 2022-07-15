@@ -15,4 +15,4 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::post('midtrans-notification',MidtransController::class);
+Route::post('midtrans-api-notification',MidtransController::class);

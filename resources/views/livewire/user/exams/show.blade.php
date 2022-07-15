@@ -14,10 +14,17 @@
                             <li>Total Soal {{ $total_questions }}</li>
                             <li>Kategori: {{ $exam->category }}</li>
                             <li>Tahun Terbit: {{ $exam->year }}</li>
-                            <li>Tipe: {{ $exam->type }}</li>
                         </ol>
                         @if ($membership)
-                            <button wire:click="start" class="btn btn-primary">Mulai Ujian</button>
+                            @if ($exam_user)
+                                @if ($exam_user->answers)
+                                    <a href="{{ route('user.questions.index',$exam->id) }}" class="btn btn-warning">Review</a>
+                                @else
+                                    <a href="{{ route('user.questions.index',$exam->id) }}" class="btn btn-danger">Lanjut Ujian</a>
+                                @endif
+                            @else
+                                <button wire:click="start" class="btn btn-primary">Mulai Ujian</button>
+                            @endif
                         @else
                             <button class="btn btn-secondary" disabled>Kamu Belum Membership</button>
                         @endif

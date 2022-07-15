@@ -35,9 +35,9 @@ Route::middleware('auth')->group(function(){
     // User Exams
     Route::get('/exams', App\Http\Livewire\User\Exams\Home::class)->name('user.exams.home');
     Route::get('/exams/{id}', App\Http\Livewire\User\Exams\Show::class)->name('user.exams.show');
-    Route::get('/results/{id}', App\Http\Livewire\User\Exams\Result::class)->name('user.exams.result');
     // User Questions
     Route::get('/questions/{id}', App\Http\Livewire\User\Questions\Index::class)->name('user.questions.index');
+    Route::get('/results/{id}', App\Http\Livewire\User\Questions\Result::class)->name('user.questions.result');
     // Membership
     Route::get('/memberships', App\Http\Livewire\User\Membership\Home::class)->name('user.memberships.home');
     // Invoices
