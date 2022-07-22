@@ -42,6 +42,9 @@
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('admin.exams.home') }}">{{ __('Exams') }}</a>
                             </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('admin.users.home') }}">{{ __('Users') }}</a>
+                            </li>
                         @else
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('user.exams.home') }}">{{ __('Exams') }}</a>

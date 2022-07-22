@@ -14,7 +14,7 @@
                                     <th>Description</th>
                                     <th>Category</th>
                                     <th>Year</th>
-                                    <th>Type</th>
+                                    <th>Timer</th>
                                     <th></th>
                                 </tr>
                             </thead>
@@ -26,12 +26,12 @@
                                         <td>{{ $item->description }}</td>
                                         <td>{{ $item->category }}</td>
                                         <td>{{ $item->year }}</td>
-                                        <td>{{ $item->type }}</td>
+                                        <td>{{ $item->timer }} Minutes</td>
                                         <td>
                                             <button wire:click="hapusData({{ $item->id }})" onclick="confirm('yakin?')" class="btn btn-sm btn-danger">Delete</button>
                                             <a href="{{ route('admin.exams.edit',$item->id) }}" class="btn btn-sm btn-warning">Edit</a>
                                             <a href="{{ route('admin.questions.index',$item->id) }}" class="btn btn-sm btn-info">Details</a>
-                                            <a href="" class="btn btn-sm btn-info">Users</a>
+                                            <a href="{{ route('admin.exams.users.home',$item->id) }}" class="btn btn-sm btn-info">Users : {{ count($item->examUsers) }}</a>
                                         </td>
                                     </tr>
                                 @endforeach

@@ -29,8 +29,8 @@ class Index extends Component
 
         $question = Question::select(['id'])->where('exam_id',$id)->first();
         $this->number = 1;
-        $this->question_id = $question->id;
-        $this->questions_id = Question::select(['id'])->where('exam_id',$id)->get();
+        $this->questions_id = Question::select(['id'])->where('exam_id',$id)->inRandomOrder()->get();
+        $this->question_id = $this->questions_id[0]->id;
     }
     public function render()
     {

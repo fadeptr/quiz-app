@@ -14,6 +14,7 @@
                             <li>Total Soal {{ $total_questions }}</li>
                             <li>Kategori: {{ $exam->category }}</li>
                             <li>Tahun Terbit: {{ $exam->year }}</li>
+                            <li>Waktu Ujian: {{ $exam->timer }} Menit</li>
                         </ol>
                         @if ($membership)
                             @if ($exam_user)

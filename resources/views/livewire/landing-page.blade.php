@@ -3,7 +3,6 @@
         <section>
             <h1>{{ config('app.name') }}</h1>
             <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quaerat ullam harum ex ea sit, ratione sequi culpa aperiam, quia dicta, itaque esse fugit exercitationem obcaecati quisquam. Tempora dolore vel minus reiciendis debitis assumenda tenetur obcaecati temporibus quod cumque consequuntur ea repellat fuga nemo, necessitatibus fugiat eum ipsa eius sunt? Beatae deserunt illum molestias dolor, alias voluptatem pariatur mollitia voluptatibus id. Illo eum ad sequi, est ipsam aliquam eos quas, sit optio quae quos, numquam enim atque. Aliquid libero pariatur totam, quisquam adipisci et. Nemo, in ipsum quam illo doloribus at numquam necessitatibus ipsam cupiditate possimus commodi, dolorem, magnam sed nesciunt.</p>
-            <a href="" class="btn btn-primary">Submit</a>
         </section>
         <section class="mt-5">
             <div class="row">
@@ -32,42 +31,20 @@
         </section>
         <section class="mt-5">
             <div class="row">
-                <div class="col-md-4">
-                    <div class="card">
-                        <div class="card-header">Paket 1 Bulan</div>
-                        <div class="card-body">
-                            <h6 class="text-danger">
-                                <s>Rp.1.000.000</s>
-                            </h6>
-                            <h3>Rp.100.000</h3>
-                            <a href="" class="btn btn-primary">Beli Sekarang</a>
+                @foreach ($payments as $key => $item)
+                    <div class="col-md-4">
+                        <div class="card">
+                            <div class="card-header">Paket {{ $item->benefit }} Bulan</div>
+                            <div class="card-body">
+                                <h6 class="text-danger">
+                                    <s>Rp.{{ number_format($item->normal_price) }}</s>
+                                </h6>
+                                <h3>Rp.{{ number_format($item->price) }}</h3>
+                                <a href="{{ route('user.memberships.home') }}" class="btn btn-primary">Beli Sekarang</a>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card">
-                        <div class="card-header">Paket 1 Bulan</div>
-                        <div class="card-body">
-                            <h6 class="text-danger">
-                                <s>Rp.1.000.000</s>
-                            </h6>
-                            <h3>Rp.100.000</h3>
-                            <a href="" class="btn btn-primary">Beli Sekarang</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card">
-                        <div class="card-header">Paket 1 Bulan</div>
-                        <div class="card-body">
-                            <h6 class="text-danger">
-                                <s>Rp.1.000.000</s>
-                            </h6>
-                            <h3>Rp.100.000</h3>
-                            <a href="" class="btn btn-primary">Beli Sekarang</a>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
             </div>
         </section>
         <section class="mt-5">

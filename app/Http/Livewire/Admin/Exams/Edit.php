@@ -8,7 +8,7 @@ use Livewire\Component;
 class Edit extends Component
 {
     public $exam_id;
-    public $judul, $category, $year, $description, $type;
+    public $judul, $category, $year, $description, $timer;
 
     public function mount($id)
     {
@@ -19,7 +19,7 @@ class Edit extends Component
         $this->category = $exam->category;
         $this->year = $exam->year;
         $this->description = $exam->description;
-        $this->type = $exam->type;
+        $this->timer = $exam->timer;
 
     }
 
@@ -35,7 +35,7 @@ class Edit extends Component
             'category' => 'required',
             'year' => 'required',
             'description' => 'required',
-            'type' => 'required',
+            'timer' => 'required',
         ]);
 
         Exam::where('id', $this->exam_id)->update([
@@ -43,7 +43,7 @@ class Edit extends Component
             'category' => $this->category,
             'year' => $this->year,
             'description' => $this->description,
-            'type' => $this->type,
+            'timer' => $this->timer,
         ]);
 
         session()->flash('success', 'Berhasil diubah Ujian');

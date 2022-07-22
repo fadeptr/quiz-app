@@ -9,4 +9,14 @@ class Exam extends Model
 {
     use HasFactory;
     protected $guarded = [];
+
+    public function questions()
+    {
+        return $this->hasMany(Question::class);
+    }
+
+    public function examUsers()
+    {
+        return $this->hasMany(ExamUser::class);
+    }
 }

@@ -7,7 +7,7 @@ use Livewire\Component;
 
 class Create extends Component
 {
-    public $judul, $category, $year, $description, $type;
+    public $judul, $category, $year, $description, $timer;
 
     public function render()
     {
@@ -21,7 +21,7 @@ class Create extends Component
             'category' => 'required',
             'year' => 'required',
             'description' => 'required',
-            'type' => 'required',
+            'timer' => 'required',
         ]);
 
         Exam::create([
@@ -29,7 +29,7 @@ class Create extends Component
             'category' => $this->category,
             'year' => $this->year,
             'description' => $this->description,
-            'type' => $this->type,
+            'timer' => $this->timer,
         ]);
 
         session()->flash('success', 'Berhasil Tambah Ujian');

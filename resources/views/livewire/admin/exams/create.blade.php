@@ -30,13 +30,9 @@
                                 @enderror
                             </div>
                             <div class="mb-3">
-                                <label class="form-label">Type Ujian</label>
-                                <select class="form-select @error('type') is-invalid @enderror" aria-label="Default select example" wire:model="type">
-                                    <option selected hidden>Pilih Type Ujian</option>
-                                    <option value="free">Gratis</option>
-                                    <option value="premium">Premium</option>
-                                </select>
-                                @error('type')
+                                <label class="form-label">Waktu Ujian</label>
+                                <input type="number" class="form-control @error('timer') is-invalid @enderror" placeholder="Masukkan Waktu Ujian" wire:model="timer">
+                                @error('timer')
                                     <div class="invalid-feedback">
                                         {{ $message }}
                                     </div>

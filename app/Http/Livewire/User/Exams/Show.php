@@ -33,7 +33,7 @@ class Show extends Component
         ExamUser::create([
             'user_id' => Auth::user()->id,
             'exam_id' => $this->exam->id,
-            'expired' => Carbon::now()->addMinutes(3)
+            'expired' => Carbon::now()->addMinutes($this->exam->timer)
         ]);
         return redirect()->route('user.questions.index',$this->exam->id);
     }
