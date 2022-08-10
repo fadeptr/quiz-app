@@ -5,27 +5,27 @@
                 <div class="card">
                     <div class="card-header d-flex justify-content-between">
                         <div>
-                            {{ $number }}/{{ count($questions_id) }}
+                            {{ $myNumber + 1 }}/{{ count($questions) }}
                         </div>
                         <div>
-                            @if ($number > 1)
+                            @if ($myNumber >= 1)
                                 <span role="button" wire:click="prevNumber">Prev</span>
                             @endif
-                            @if ($number < count($questions_id))
+                            @if (($myNumber + 1) < count($questions))
                                 <span role="button" wire:click="nextNumber" class="mx-3">Next</span>
                             @endif
                         </div>
                     </div>
                     <div class="card-body">
-                        <p>{!! $question->body !!}</p>
+                        <p>{!! $questions[$myNumber]['body'] !!}</p>
                         <hr>
                         <ol type="A">
-                            @foreach (json_decode($question->options) as $key => $item)
+                            @foreach (json_decode($questions[$myNumber]['options']) as $key => $item)
                             <li>
-                                <div class="form-check" wire:click="selectAnswer({{ $question->id }},{{ $key }})">
-                                    <label class="form-check-label" for="options-{{ $question->id }}{{ $key }}">
+                                <div class="form-check" wire:click="selectAnswer({{ $questions[$myNumber]['id'] }},{{ $key }})">
+                                    <label class="form-check-label" for="options-{{ $questions[$myNumber]['id'] }}{{ $key }}">
                                     {{ $item }}
-                                    @if (array_key_exists($question->id,$myAnswer) && $myAnswer[$question->id] === $key)
+                                    @if (array_key_exists($questions[$myNumber]['id'],$myAnswer) && $myAnswer[$questions[$myNumber]['id']] === $key)
                                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check2-circle text-primary" viewBox="0 0 16 16">
                                             <path d="M2.5 8a5.5 5.5 0 0 1 8.25-4.764.5.5 0 0 0 .5-.866A6.5 6.5 0 1 0 14.5 8a.5.5 0 0 0-1 0 5.5 5.5 0 1 1-11 0z"/>
                                             <path d="M15.354 3.354a.5.5 0 0 0-.708-.708L8 9.293 5.354 6.646a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l7-7z"/>
@@ -36,7 +36,7 @@
                             </li>
                             @endforeach
                         </ol>
-                        @if (count($myAnswer) == count($questions_id))
+                        @if (count($myAnswer) == count($questions))
                             <div class="d-grid">
                                 <button wire:click="finish" class="btn btn-primary">Selesai</button>
                             </div>
@@ -49,14 +49,16 @@
                     <div class="card-header">Nomor</div>
                     <div class="card-body">
                         <div class="row">
-                            @foreach ($questions_id as $key => $item)
+                            @foreach ($questions as $key => $item)
                             <div class="col-md-2 mb-3">
-                                @if ($question_id === $item->id)
-                                    <span role="button" wire:click="changeQuestion({{ $item->id }},{{ $key + 1 }})" class="text-primary">{{ $key + 1 }}</span>
-                                @elseif(array_key_exists($item->id,$myAnswer))
-                                    <span role="button" wire:click="changeQuestion({{ $item->id }},{{ $key + 1 }})" class="text-warning">{{ $key + 1 }}</span>
+                                @if ($key == $myNumber)
+                                    <span role="button" wire:click="changeQuestion({{ $key }})" class="text-primary">{{ $key + 1 }}</span>
                                 @else
-                                    <span role="button" wire:click="changeQuestion({{ $item->id }},{{ $key + 1 }})" class="text-dark">{{ $key + 1 }}</span>
+                                    @if(array_key_exists($item['id'],$myAnswer))
+                                        <span role="button" wire:click="changeQuestion({{ $key }})" class="text-warning">{{ $key + 1 }}</span>
+                                    @else
+                                        <span role="button" wire:click="changeQuestion({{ $key }})" class="text-dark">{{ $key + 1 }}</span>
+                                    @endif
                                 @endif
                             </div>
                             @endforeach

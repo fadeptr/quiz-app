@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Auth;
 
 class Index extends Component
 {
-    public $questions_id, $number;
+    public $questions, $myNumber = 0;
     public $exam_user;
     public $myAnswer = [];
 
@@ -27,23 +27,16 @@ class Index extends Component
             return redirect()->route('user.questions.result',$id);
         }
 
-        $question = Question::select(['id'])->where('exam_id',$id)->first();
-        $this->number = 1;
-        $this->questions_id = Question::select(['id'])->where('exam_id',$id)->inRandomOrder()->get();
-        $this->question_id = $this->questions_id[0]->id;
+        $this->questions = Question::where('exam_id',$id)->inRandomOrder()->get()->toArray();
     }
     public function render()
     {
-        return view('livewire.user.questions.index',[
-            'question' => Question::find($this->question_id)
-        ])->extends('layouts.app');
+        return view('livewire.user.questions.index')->extends('layouts.app');
     }
 
-    public function changeQuestion($id, $number)
+    public function changeQuestion($number)
     {
-        $question = Question::select(['id'])->find($id);
-        $this->question_id = $question->id;
-        $this->number = $number;
+        $this->myNumber = $number;
         if(Carbon::now() > $this->exam_user->expired){
             $point = 0;
             // Cek Benar
@@ -74,18 +67,12 @@ class Index extends Component
 
     public function prevNumber()
     {
-        $question = Question::select(['id'])->find($this->question_id);
-        $prev = Question::where('id','<',$question->id)->max('id');
-        $this->question_id = $prev;
-        $this->number--;
+        $this->myNumber--;
     }
 
     public function nextNumber()
     {
-        $question = Question::select(['id'])->find($this->question_id);
-        $next = Question::where('id','>',$question->id)->min('id');
-        $this->question_id = $next;
-        $this->number++;
+        $this->myNumber++;
     }
 
     public function finish()
