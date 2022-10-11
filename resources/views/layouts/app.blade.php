@@ -49,12 +49,6 @@
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('user.exams.home') }}">{{ __('Exams') }}</a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('user.memberships.home') }}">{{ __('Membership') }}</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('user.invoices.home') }}">{{ __('Invoices') }}</a>
-                            </li>
                         @endif
                         @endauth
                     </ul>
@@ -75,11 +69,6 @@
                                 </li>
                             @endif
                         @else
-                            <li class="nav-item">
-                                <div class="nav-link">
-                                    <x-membership/>
-                                </div>
-                            </li>
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }}
@@ -103,7 +92,7 @@
             </div>
         </nav>
 
-        <main class="py-4">
+        <main>
             @yield('content')
         </main>
     </div>

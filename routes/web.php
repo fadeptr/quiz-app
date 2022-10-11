@@ -45,11 +45,4 @@ Route::middleware('auth')->group(function(){
     // User Questions
     Route::get('/questions/{id}', App\Http\Livewire\User\Questions\Index::class)->name('user.questions.index');
     Route::get('/results/{id}', App\Http\Livewire\User\Questions\Result::class)->name('user.questions.result');
-    // Membership
-    Route::get('/memberships', App\Http\Livewire\User\Membership\Home::class)->name('user.memberships.home');
-    // Invoices
-    Route::get('/invoices', App\Http\Livewire\User\Invoices\Home::class)->name('user.invoices.home');
-
 });
-// Users
-

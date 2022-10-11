@@ -7,12 +7,11 @@ use App\Models\Exam;
 use Livewire\Component;
 use App\Models\ExamUser;
 use App\Models\Question;
-use App\Models\Membership;
 use Illuminate\Support\Facades\Auth;
 
 class Show extends Component
 {
-    public $exam, $total_questions, $membership, $exam_user;
+    public $exam, $total_questions, $exam_user;
     public function mount($id)
     {
         $this->exam_user = ExamUser::where([
@@ -21,7 +20,6 @@ class Show extends Component
         ])->first();
         $this->exam = Exam::find($id);
         $this->total_questions = Question::where('exam_id',$id)->count();
-        $this->membership = Membership::where('user_id',Auth::user()->id)->where('status','aktif')->first();
     }
     public function render()
     {

@@ -1,5 +1,5 @@
 <div>
-    <div class="container">
+    <div class="container py-4">
         <h1>Daftar Ujian</h1>
         <hr>
         <div class="row">

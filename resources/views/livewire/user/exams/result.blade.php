@@ -1,5 +1,5 @@
 <div>
-    <div class="row justify-content-center">
+    <div class="row justify-content-center py-4">
         <div class="col-md-6">
                 <div class="container">
                 <h1>Bahasa Indonesia</h1>

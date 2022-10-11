@@ -1,5 +1,5 @@
 <div>
-    <div class="container">
+    <div class="container py-4">
         <div class="row justify-content-center">
             <div class="col-md-6">
                 <h1 class="text-capitalize">{{ $exam->title }}</h1>
@@ -16,18 +16,14 @@
                             <li>Tahun Terbit: {{ $exam->year }}</li>
                             <li>Waktu Ujian: {{ $exam->timer }} Menit</li>
                         </ol>
-                        @if ($membership)
-                            @if ($exam_user)
-                                @if ($exam_user->answers)
-                                    <a href="{{ route('user.questions.index',$exam->id) }}" class="btn btn-warning">Review</a>
-                                @else
-                                    <a href="{{ route('user.questions.index',$exam->id) }}" class="btn btn-danger">Lanjut Ujian</a>
-                                @endif
+                        @if ($exam_user)
+                            @if ($exam_user->answers)
+                                <a href="{{ route('user.questions.index',$exam->id) }}" class="btn btn-warning">Review</a>
                             @else
-                                <button wire:click="start" class="btn btn-primary">Mulai Ujian</button>
+                                <a href="{{ route('user.questions.index',$exam->id) }}" class="btn btn-danger">Lanjut Ujian</a>
                             @endif
                         @else
-                            <button class="btn btn-secondary" disabled>Kamu Belum Membership</button>
+                            <button wire:click="start" class="btn btn-primary">Mulai Ujian</button>
                         @endif
                     </div>
                 </div>
