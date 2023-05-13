@@ -14,8 +14,8 @@
         <div class="max-w-screen-lg mx-auto px-4 lg:px-0">
             <div class="lg:flex lg:items-center">
                 <div class="w-full lg:w-1/2">
-                    <div class="text-2xl lg:text-4xl font-bold mb-4">Ayo menjadi warga indonesia yang cerdas, belajar disini, Sekarang!!</div>
-                    <div class="text-sm lg:text-base text-gray-500">Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis culpa similique aspernatur. Obcaecati excepturi quasi sunt accusantium temporibus numquam quidem?</div>
+                    <div class="text-2xl lg:text-4xl font-bold mb-4">Ayo menjadi siswa indonesia yang cerdas!!</div>
+                    <div class="text-sm lg:text-base text-gray-500">Belajar dengan fasilitas modern, guru alumni PTN, dan dilengkapi kelas pengembangan diri.</div>
                     {{-- <div class="btn btn-primary">Tombol</div> --}}
                     <div class="flex mt-5">
                         <a href="{{ route('login') }}" class="bg-orange-500 hover:bg-orange-600 transition-colors text-white border border-orange-700 rounded-lg px-3 py-2 text-sm mr-2">Masuk</a>
@@ -30,36 +30,36 @@
     </header>
     <section class="max-w-screen-lg mx-auto mt-5">
         <div class="text-left lg:text-center mb-5 px-4 lg:px-0">
-            <h2 class="text-xl lg:text-3xl font-bold">Lorem ipsum dolor sit amet.</h2>
-            <p class="text-base lg:text-2xl">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint, ipsam.</p>
+            <h2 class="text-xl lg:text-3xl font-bold">BIMBEL DEVINA</h2>
+            <p class="text-base lg:text-2xl">Kav.Flamboyan Blok K No 6, Kecamatan Sagulung, Kelurahan Sungai Pelunggut, Kota Batam.</p>
         </div>
         <div class="lg:flex text-black gap-5 mt-10 px-4 lg:px-0">
             <div class="w-full lg:w-1/3 bg-white hover:bg-orange-100 transition shadow-xl rounded-2xl p-10 mb-5 lg:mb-0">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-12 h-12 mb-3">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M4.26 10.147a60.436 60.436 0 00-.491 6.347A48.627 48.627 0 0112 20.904a48.627 48.627 0 018.232-4.41 60.46 60.46 0 00-.491-6.347m-15.482 0a50.57 50.57 0 00-2.658-.813A59.905 59.905 0 0112 3.493a59.902 59.902 0 0110.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.697 50.697 0 0112 13.489a50.702 50.702 0 017.74-3.342M6.75 15a.75.75 0 100-1.5.75.75 0 000 1.5zm0 0v-3.675A55.378 55.378 0 0112 8.443m-7.007 11.55A5.981 5.981 0 006.75 15.75v-1.5" />
                 </svg>
-                <h3 class="text-xl font-medium mb-4">Lorem ipsum dolor sit amet.</h3>
+                <h3 class="text-xl font-medium mb-4 justify=center">Murah</h3>
                 <p class="text-sm text-gray-500">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vitae illum nobis eum dolorem deserunt. Eaque numquam ullam voluptas vitae temporibus.</p>
             </div>
             <div class="w-full lg:w-1/3 bg-white hover:bg-orange-100 transition shadow-xl rounded-2xl p-10 mb-5 lg:mb-0">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-12 h-12 mb-3">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M4.26 10.147a60.436 60.436 0 00-.491 6.347A48.627 48.627 0 0112 20.904a48.627 48.627 0 018.232-4.41 60.46 60.46 0 00-.491-6.347m-15.482 0a50.57 50.57 0 00-2.658-.813A59.905 59.905 0 0112 3.493a59.902 59.902 0 0110.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.697 50.697 0 0112 13.489a50.702 50.702 0 017.74-3.342M6.75 15a.75.75 0 100-1.5.75.75 0 000 1.5zm0 0v-3.675A55.378 55.378 0 0112 8.443m-7.007 11.55A5.981 5.981 0 006.75 15.75v-1.5" />
                 </svg>
-                <h3 class="text-xl font-medium mb-4">Lorem ipsum dolor sit amet.</h3>
+                <h3 class="text-xl font-medium mb-4">Mudah</h3>
                 <p class="text-sm text-gray-500">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vitae illum nobis eum dolorem deserunt. Eaque numquam ullam voluptas vitae temporibus.</p>
             </div>
             <div class="w-full lg:w-1/3 bg-white hover:bg-orange-100 transition shadow-xl rounded-2xl p-10">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-12 h-12 mb-3">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M4.26 10.147a60.436 60.436 0 00-.491 6.347A48.627 48.627 0 0112 20.904a48.627 48.627 0 018.232-4.41 60.46 60.46 0 00-.491-6.347m-15.482 0a50.57 50.57 0 00-2.658-.813A59.905 59.905 0 0112 3.493a59.902 59.902 0 0110.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.697 50.697 0 0112 13.489a50.702 50.702 0 017.74-3.342M6.75 15a.75.75 0 100-1.5.75.75 0 000 1.5zm0 0v-3.675A55.378 55.378 0 0112 8.443m-7.007 11.55A5.981 5.981 0 006.75 15.75v-1.5" />
                 </svg>
-                <h3 class="text-xl font-medium mb-4">Lorem ipsum dolor sit amet.</h3>
+                <h3 class="text-xl font-medium mb-4">Terpercaya</h3>
                 <p class="text-sm text-gray-500">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vitae illum nobis eum dolorem deserunt. Eaque numquam ullam voluptas vitae temporibus.</p>
             </div>
         </div>
     </section>
     <footer class="w-full px-4 lg:px-0 lg:max-w-screen-lg mx-auto mt-5">
         <div class="flex justify-between items-center py-5">
-            <div class="text-gray-500">Website ini milik Faisal Ade Putra &copy; 2022</div>
+            <div class="text-gray-500">Faisal Ade Putra &copy; 2022</div>
             <div class="flex">
                 <a href="" class="ml-2">
                     <svg class="fill-gray-800 w-6 h-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M504 256C504 119 393 8 256 8S8 119 8 256c0 123.78 90.69 226.38 209.25 245V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.28c-30.8 0-40.41 19.12-40.41 38.73V256h68.78l-11 71.69h-57.78V501C413.31 482.38 504 379.78 504 256z"/></svg>

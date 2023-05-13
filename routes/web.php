@@ -22,7 +22,10 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::get('/', App\Http\Livewire\LandingPage::class);
+Route::get('/profile', App\Http\Livewire\Profile::class)->name('profile');
+Route::get('/gambar', App\Http\Livewire\Gambar::class)->name('gambar');
 
+// Harus login
 Route::middleware('auth')->group(function(){
     Route::prefix('admin')->group(function(){
         // Exams

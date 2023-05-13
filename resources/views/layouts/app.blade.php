@@ -33,7 +33,7 @@
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-
+    
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Pahami -->
                     <ul class="navbar-nav me-auto">
@@ -51,6 +51,12 @@
                             </li>
                         @endif
                         @endauth
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('profile') }}">{{ __('Profileku') }}</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('gambar') }}">{{ __('Gambar') }}</a>
+                        </li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->
